@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="entidades.js"></script>
+    <script src="logica.js" defer></script>
+    <title>SegundoParcialLaboIII</title>
+</head>
+
+
+<body>
+    <style>
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(226, 226, 238);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+
+        }
+
+        input[type="button"] {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border-top: 1px solid black;
+
+        }
+
+        th,
+        td {
+
+
+            padding: 8px;
+            text-align: left;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+            border: 1px solid black;
+
+        }
+
+        .form-row {
+            display: flex;
+
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-row label {
+            margin-right: 10px;
+        }
+
+        .form-row input[type="checkbox"] {
+            margin-right: 5px;
+
+        }
+
+        .elementos-group {
+            display: none;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        #titulo {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+    .spinner {
+    margin: 100px auto;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    text-align: center;
+    animation: rotate 2s infinite linear;
+    }
+
+    .spinner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: spin 1.5s infinite ease-in-out;
+    }
+
+    @keyframes rotate {
+    100% {
+    transform: rotate(360deg);
+    }
+    }
+
+    @keyframes spin {
+    0% {
+    transform: rotate(0deg);
+    }
+
+    50% {
+    transform: rotate(180deg);
+    border-color: transparent transparent #000 transparent;
+    }
+
+    100% {
+    transform: rotate(360deg);
+    }
+    }
+
+    #tituloFormLista{
+        text-align: center;
+    }
+
+
+
+
+    </style>
+    <div class="spinner" id="spinner"></div>
+    <form id="formLista">
+        <div id="tituloFormLista">
+            <label for="campoEjemplo" id="  ">FORMULARIO LISTA</label>
+        </div>
+        <table id="tablaPersonas">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </form>
+    <div id="divBoton">
+        <input type="button" value="Agregar" id="btnAgregar">
+    </div>
+    </form>
+    <form action="" id="formularioAbm">
+        <label for="">Formulario Abm</label>
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" id="txtNombre">
+        </div>
+        <div>
+            <label for="">Apellido</label>
+            <input type="text" id="txtApellido">
+        </div>
+        <div>
+            <label for="">Edad</label>
+            <input type="text" id="txtEdad">
+        </div>
+        <div>
+            <label for="" id="lblTipo">Seleccione el tipo</label>
+            <select name="" id="selectTipo">
+                <option value="cliente">Cliente</option>
+                <option value="empleado">Empleado</option>
+            </select>
+        </div>
+        <div id="elementosEmpleado">
+            <div>
+                <label for="">Ventas</label>
+                <input type="text" id="txtVentas">
+            </div>
+            <div>
+                <label for="">Sueldo</label>
+                <input type="text" id="txtSueldo">
+            </div>
+        </div>
+        <div id="elementosCliente">
+            <label for="">Compras</label>
+            <input type="text" id="txtCompras">
+            <div>
+                <label for="">Telefono</label>
+                <input type="text" id="txtTelefono">
+            </div>
+        </div>
+        </div>
+        <div>
+            <input type="button" value="Cancelar" id="btnCancelar">
+            <input type="button" value="Eliminar" id="btnEliminar">
+            <input type="button" value="Aceptar" id="btnAceptar">
+            <input type="button" value="Modificar" id="btnModificar">
+        </div>
+    </form>
+</body>
+
+</html>
