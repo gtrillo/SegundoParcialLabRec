@@ -1,3 +1,4 @@
+let personaSeleccionada;
 var selectElement = document.getElementById("sltFiltro");
 spinner.style.display = "none";
 var manejadorFormAbm = function (accion) {
@@ -45,10 +46,8 @@ function recuperarPersonas() {
                             json[i].sueldo,
                             json[i].ventas
                         );
-                        // Hacer algo con el empleado...
                         listaPersonas.push(empleado);
                     } else {
-                        // Crear instancia de Cliente
                         let cliente = new Cliente(
                             json[i].id,
                             json[i].nombre,
@@ -57,23 +56,21 @@ function recuperarPersonas() {
                             json[i].compras,
                             json[i].telefono
                         );
-                        // Hacer algo con el cliente...
                         listaPersonas.push(cliente);
                     }
                 }
                 manejadorFormLista("dibujar");
                 manejadorSpinner("ocultar");
             } else {
-                console.log("Fallo Delete");
-                console.log("Desbloqueamos Pantalla");
-                console.log("Muestro Form Tabla");
+                alert("Fallo en el GET");
+                manejadorFormLista("dibujar");
             }
         }
     };
     xml.open("GET", "http://localhost/PersonasEmpleadosClientes.php", false);
     xml.send();
 
-    return listaPersonas; // Retornar la lista de personas
+    return listaPersonas;
 }
 
 let personas = recuperarPersonas();
@@ -130,12 +127,6 @@ var crearTabla = function (lista) {
 };
 document.getElementById("tablaPersonas").innerHTML = crearTabla(personas);
 
-manejadorFormAbm('ocultar');
-
-
-//////importantisimo poner estooo
-///es para abrir la fila
-let personaSeleccionada;
 
 function abrirFormulario(persona) {
     btnAceptar.style.display = "none";
@@ -492,7 +483,7 @@ function eliminar(personaSeleccionada) {
             }
         }
     };
-    xml.open("DELETE", 'http://localhost/vehiculoAereoTerrestre.php');
+    xml.open("DELETE", 'http://localhost/PersonasEmpleadosClientes.php');
     xml.setRequestHeader("Content-Type", "application/json");
     let o = { id: personaSeleccionada.id };
     xml.send(JSON.stringify(o));
